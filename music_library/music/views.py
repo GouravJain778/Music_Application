@@ -113,13 +113,14 @@ def music_page(request):
 @login_required
 def create_music(request):
     if request.method == 'POST':
-        form = MusicForm(request.POST)
+        form = MusicForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('musicpage')  # Redirect to homepage or any other desired page
+            return redirect('musicpage')  # Redirect to a success URL
     else:
         form = MusicForm()
-    return render(request, 'registration/create_music.html', {'form': form})
+    return render(request, 'registration/create_music.html', {'form': form, 'username':request.user.username})
+
 
 
 @login_required

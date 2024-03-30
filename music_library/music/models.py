@@ -27,7 +27,7 @@ class Music(models.Model):
     title = models.CharField(max_length=100)
     artist = models.CharField(max_length=100)
     genre = models.CharField(max_length=50)
-    file_upload = models.FileField(upload_to='music/')
+    file_upload = models.FileField(upload_to='media/music/')
 
 
     def __str__(self):

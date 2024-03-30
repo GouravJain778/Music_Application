@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Music</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            
             padding: 20px;
         }
 
         .container {
-            background-color: #fff;
+            background-color: gray;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            width: 500px;
+            height: 600px;
+            
+            
+        
+            
+            
         }
 
         h1 {
@@ -38,6 +46,10 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+        .user{
+            text-align: center;
+
+        }
 
         button {
             padding: 10px 20px;
@@ -56,8 +68,21 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Create New Music</h1>
+    
+              
+    
+    <div class="container" "card-body">
+
+            <h5 class="card-title">{{ item.name }}</h5>
+            
+            <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+            <a href="{% url 'musicpage' %}" class="btn btn-danger">Music</a>
+        
+        
+    
+
+        
+        <h2>Create New Music</h2>
         <form method="post" action="{% url 'create_music' %}" enctype="multipart/form-data">
 
             {% csrf_token %}
@@ -66,6 +91,10 @@
         </form>
     </div>
 </body>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</html>
+ <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>   

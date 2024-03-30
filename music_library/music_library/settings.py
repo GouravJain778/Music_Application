@@ -123,6 +123,7 @@ AUTH_USER_MODEL = 'music.User'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',  # Default backend
 ]
+
 LOGIN_URL = '/login/'
 
 STATIC_URL = '/static/'
